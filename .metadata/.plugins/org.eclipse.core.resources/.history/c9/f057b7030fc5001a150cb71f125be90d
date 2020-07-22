@@ -1,0 +1,22 @@
+package com.example.demo.modelforservices;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
+public class StudentsTimeTable {
+	private String forClasse;
+	private String days;
+	private String lectures;
+	private String monSubjects;
+	private String monClasses;
+	private String tueSubjects;
+	private String tueClasses;
+	private String wedSubjects;
+	private String wedClasses;
+	private String thuSubjects;
+	private String thuClasses;
+	private String friSubjects;
+	private String friClasses;
+}

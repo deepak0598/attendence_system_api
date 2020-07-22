@@ -1,0 +1,12 @@
+package com.example.demo.model;
+
+import java.util.Date;
+
+public class StudentsAttendence {
+public int attendence_id;
+public int user_id;
+public Date date;
+public int day_id;
+public int lecture_id;
+public int subject_id;
+}

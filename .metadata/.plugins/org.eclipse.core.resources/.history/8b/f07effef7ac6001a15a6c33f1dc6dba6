@@ -1,0 +1,32 @@
+package com.example.demo.modelforservices;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+
+@Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+public class StudentsTimeTableServiceModel {
+	private String forClasse;
+	private Set<String> days=new HashSet<String>();
+	private Set<String> lectures=new HashSet<String>();
+	private Set<String> monSubjects=new HashSet<String>();
+	private Set<String> monTeachers=new HashSet<String>();
+	private Set<String> tueSubjects=new HashSet<String>();
+	private Set<String> tueTeachers=new HashSet<String>();
+	private Set<String> wedTeachers=new HashSet<String>();
+	private Set<String> wedSubjects=new HashSet<String>();
+	private Set<String> thuTeachers=new HashSet<String>();
+	private Set<String> thuSubjects=new HashSet<String>();
+	private Set<String> friTeachers=new HashSet<String>();
+	private Set<String> friSubjects=new HashSet<String>();
+}

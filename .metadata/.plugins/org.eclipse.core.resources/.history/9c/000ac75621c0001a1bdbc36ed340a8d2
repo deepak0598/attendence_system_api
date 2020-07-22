@@ -1,0 +1,11 @@
+package com.example.demo.model;
+
+public class Student {
+	private int studentId;
+	private int classId;
+	private int userId;
+	private String studentName;
+	private String studentGender;
+	private String studentPhone;
+	private String studentEmail;
+}

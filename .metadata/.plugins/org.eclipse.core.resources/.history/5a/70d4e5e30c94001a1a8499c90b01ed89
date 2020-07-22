@@ -1,0 +1,4 @@
+insert into category (categoryId,categoryName) values (1,'bikes');
+insert into category (categoryId,categoryName) values (12,'cycles');
+insert into category (categoryId,categoryName) values (3,'cars');
+insert into category (categoryId,categoryName) values (4,'bus');

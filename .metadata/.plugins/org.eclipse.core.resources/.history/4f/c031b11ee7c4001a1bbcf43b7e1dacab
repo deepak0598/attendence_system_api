@@ -1,0 +1,23 @@
+package com.example.demo.modelforservices;
+
+import java.util.List;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Setter
+@Getter
+public class StudentsTimeTable {
+	private List<String> monSubjects;
+	private List<String> monClasses;
+	private List<String> tueSubjects;
+	private List<String> tueClasses;
+	private List<String> wedSubjects;
+	private List<String> wedClasses;
+	private List<String> thuSubjects;
+	private List<String> thuClasses;
+	private List<String> friSubjects;
+	private List<String> friClasses;
+}

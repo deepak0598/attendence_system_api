@@ -1,0 +1,40 @@
+package com.example.demo.model;
+
+import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Setter
+@Getter
+@AllArgsConstructor
+@ToString
+@Entity
+public class StudentsTimeTable {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int timeTableId;
+	
+	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	@JoinColumn(name="dayId",nullable = false,insertable = false,updatable = false)
+	private Set<Day> dayId;
+	
+	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	@JoinColumn(name="lectureId",nullable = false,insertable = false,updatable = false)
+	private Set<Lecture> lectureId;
+	
+	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	@JoinColumn(name="subjectId",nullable = false,insertable = false,updatable = false)
+	private Set<Subject> subjectId;
+}

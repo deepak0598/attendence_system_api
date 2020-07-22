@@ -1,0 +1,35 @@
+package com.example.demo.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.model.StudentsTimeTable;
+import com.example.demo.modelforservices.StudentsTimeTableServiceModel;
+import com.example.demo.repository.StudentsTimeTableRepo;
+
+
+@Service
+public class StudentsTimeTableServiceImp implements StudentsTimeTableService{
+
+	@Autowired
+	StudentsTimeTableRepo studentsTimeTableRepo;
+	
+	StudentsTimeTableServiceModel studentsTimeTableServiceModel=new StudentsTimeTableServiceModel();
+
+	@Override
+	public void getTimeTable(int classId) {
+		for(StudentsTimeTable studentstimeTable:studentsTimeTableRepo.findByClasseId(classId)) {
+			for(int i=1;i<8;i++) {
+				System.out.println("==>>>  "+i);
+			}
+			System.out.println(studentstimeTable.getClasse().getClasseName());
+			System.out.println(studentstimeTable.getDay().getDayName());
+			System.out.println(studentstimeTable.getLecture().getLectureName());
+			System.out.println(studentstimeTable.getSubject().getSubjectName());
+			System.out.println(studentstimeTable.getTeacher().getTeacherName());
+		}
+	}
+	
+	
+
+}

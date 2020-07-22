@@ -1,0 +1,29 @@
+package com.example.demo.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Setter
+@Getter
+@AllArgsConstructor
+@ToString
+@Entity
+@Table(name="Teacher")
+public class Teacher {
+	@Id
+	@Column(name="teacherId")
+	private int teacherId;
+	private RoleDecider userId;
+	private String teacherName;
+	private String teacherGender;
+	private String teacherEmail;
+	private int teacherPhone;
+	private String teacherAddress;
+}

@@ -1,0 +1,46 @@
+package com.example.demo.controller;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.model.Category;
+import com.example.demo.repository.CategoryRepository;
+
+@RestController
+@RequestMapping("/metacart")
+public class MetaController {
+	public MetaController() {
+		System.out.println("Hello const");
+	}
+	@Autowired
+	CategoryRepository categoryRepository;
+	
+	@RequestMapping("/")
+	public void get() {
+		System.out.println("hola");
+	}
+	
+	@RequestMapping("/getCategory/{id}")
+	@ResponseBody
+	public Optional<Category> getCategoryById(@PathVariable int id) {
+		return categoryRepository.findById(id);
+	}
+	
+	@RequestMapping("/getCategory")
+	@ResponseBody
+	public List<Category> getCategory() {
+		return categoryRepository.findAll();
+	}
+	
+	@RequestMapping("/addCategory")
+	@ResponseBody
+	public void addCategory(@PathVariable Category category) {
+		categoryRepository.save(new Category(category.getCategoryId(),category.getCategoryName()));
+	}
+}

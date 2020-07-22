@@ -1,0 +1,6 @@
+package com.example.demo.model;
+
+public class Month {
+public int month_id;
+public String month_name;
+}

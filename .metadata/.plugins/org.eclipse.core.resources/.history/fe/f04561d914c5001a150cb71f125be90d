@@ -1,0 +1,9 @@
+package com.example.demo.services;
+
+import java.util.Optional;
+
+import com.example.demo.model.StudentsTimeTable;
+
+public interface StudentsTimeTableService {
+	Optional<StudentsTimeTable> getTimeTable(int classId);
+}

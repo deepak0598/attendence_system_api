@@ -1,0 +1,20 @@
+package com.example.demo.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Setter
+@Getter
+@AllArgsConstructor
+@ToString
+@Entity
+@Table(name="Role")
+public class Role {
+ private int roleId;
+ private String roleName;
+}

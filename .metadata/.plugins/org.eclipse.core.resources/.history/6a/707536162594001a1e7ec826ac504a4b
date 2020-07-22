@@ -1,0 +1,28 @@
+package com.example.demo.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Entity
+@Table(name="product")
+public class Product {
+	@Id
+	@Column(name="productId")
+	private int productId;
+	@Column(name="categoryId")
+	private int categoryId;
+	@Column(name="ProductName")
+	private String ProductName;
+	@Column(name="productPrice")
+	private int productPrice;
+	@Column(name="productDetail")
+	private String productDetail;
+	@Column(name="productImage")
+	private String productImage;
+}

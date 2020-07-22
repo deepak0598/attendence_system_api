@@ -1,0 +1,10 @@
+package com.example.demo.model;
+
+public class Product {
+	private int productId;
+	private int categoryId;
+	private String ProductName;
+	private int productPrice;
+	private String productDetail;
+	private String productImage;
+}

@@ -1,0 +1,34 @@
+package com.example.demo.model;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Setter
+@Getter
+@AllArgsConstructor
+@ToString
+@Entity
+public class LoginDetails {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int loginId;
+	
+	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+	@JoinColumn(name="roleDeciderId",nullable = false)
+	private RoleDecider roleDecider;
+	
+	@Column(nullable = false)
+	private String password;
+}

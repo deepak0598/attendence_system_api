@@ -1,0 +1,45 @@
+package com.example.demo.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.model.Classes;
+import com.example.demo.model.Day;
+import com.example.demo.model.Lecture;
+import com.example.demo.model.StudentsTimeTable;
+import com.example.demo.model.Subject;
+import com.example.demo.model.Teacher;
+import com.example.demo.modelforservices.StudentsTimeTableServiceModel;
+import com.example.demo.repository.StudentsTimeTableRepo;
+
+
+@Service
+public class StudentsTimeTableServiceImp implements StudentsTimeTableService{
+
+	@Autowired
+	StudentsTimeTableRepo studentsTimeTableRepo;
+	@Autowired
+	Classes classe;
+	@Autowired
+	Day day;
+	@Autowired
+	Lecture lecture;
+	@Autowired
+	Subject subject;
+	@Autowired
+	Teacher teacher;
+	
+	
+	StudentsTimeTableServiceModel studentsTimeTable=new StudentsTimeTableServiceModel();
+
+	@Override
+	public void getTimeTable(int classId) {
+		int i=0;
+		for(StudentsTimeTable timeTable:studentsTimeTableRepo.findByClasseId(classId)) {
+			
+		}
+	}
+	
+	
+
+}

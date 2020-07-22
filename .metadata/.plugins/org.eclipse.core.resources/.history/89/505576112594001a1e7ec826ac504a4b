@@ -1,0 +1,20 @@
+package com.example.demo.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Entity
+public class Product {
+	@Id
+	private int productId;
+	private int categoryId;
+	private String ProductName;
+	private int productPrice;
+	private String productDetail;
+	private String productImage;
+}

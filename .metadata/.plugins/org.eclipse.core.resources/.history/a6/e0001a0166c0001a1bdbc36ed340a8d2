@@ -1,0 +1,53 @@
+package com.example.demo.model;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+@Setter
+@Getter
+@AllArgsConstructor
+@ToString
+@Entity
+public class StudentsAttendence {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int studentAttendenceId;
+	
+	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	@JoinColumn(name="studentId",nullable = false)
+	private Student student;
+	
+	@Column(nullable = false)
+	private Date date;
+	
+	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	@JoinColumn(name="dayId",nullable = false)
+	private List<Day> day;
+	
+	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	@JoinColumn(nullable = false)
+	private List<Lecture> lecture=new ArrayList<>();
+	
+	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	@JoinColumn(name="subjectId",nullable = false)
+	private List<Subject> subject=new ArrayList<>();
+	
+	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	@JoinColumn(name="attendenceStatusId",nullable = false)
+	private List<AttendenceStatus> attendenceStatus=new ArrayList<>();
+}

@@ -1,0 +1,11 @@
+package com.example.demo.model;
+
+
+public class TeachersTimeTable {
+	private int timeTableId;
+	private int userId;
+	private int classId;
+	private int dayId;
+	private int lectureId;
+	private int subjectId;
+}

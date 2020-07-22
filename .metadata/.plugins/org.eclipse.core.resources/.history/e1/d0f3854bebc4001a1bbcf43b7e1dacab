@@ -1,0 +1,15 @@
+package com.example.demo.services;
+
+import org.springframework.stereotype.Service;
+
+import com.example.demo.modelforservices.StudentsTimeTable;
+@Service
+public class StudentsTimeTableServiceImp implements StudentsTimeTableService{
+
+	@Override
+	public StudentsTimeTable getTimeTable(String forClass) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

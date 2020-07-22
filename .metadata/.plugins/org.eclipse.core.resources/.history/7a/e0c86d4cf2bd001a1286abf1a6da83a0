@@ -1,0 +1,6 @@
+package com.example.demo.model;
+
+public class Day {
+	private int day_id;
+	private String day_name;
+}

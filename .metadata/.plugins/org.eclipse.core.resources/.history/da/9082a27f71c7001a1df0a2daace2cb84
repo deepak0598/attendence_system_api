@@ -1,0 +1,8 @@
+package com.example.demo.services;
+
+import com.example.demo.modelforservices.StudentsTimeTableServiceModel;
+
+public interface StudentsTimeTableService {
+//	int classId
+	StudentsTimeTableServiceModel getTimeTable();
+}

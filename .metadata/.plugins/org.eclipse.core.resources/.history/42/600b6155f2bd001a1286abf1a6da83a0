@@ -1,0 +1,6 @@
+package com.example.demo.model;
+
+public class Lecture {
+	public int lecture_id;
+	public String lecture_name;
+}

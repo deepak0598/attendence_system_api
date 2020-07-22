@@ -1,0 +1,35 @@
+package com.example.demo.controller;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.model.Role;
+import com.example.demo.model.StudentsTimeTable;
+import com.example.demo.repository.RoleRepo;
+import com.example.demo.services.StudentsTimeTableServiceImp;
+
+@RestController
+@RequestMapping("/student")
+public class StudentController {
+	@Autowired
+	RoleRepo roleRepo;
+	
+	@Autowired
+	StudentsTimeTableServiceImp studentsTimeTableServiceImp;
+
+	@GetMapping("/std/{id}")
+	public Optional<Role> get(@PathVariable int id){
+		return roleRepo.findById(id);	
+	}
+	
+	@GetMapping("/timetable/{classeId}")
+	public List<StudentsTimeTable> getStudentsTimeTable(@PathVariable int classeId){
+		return studentsTimeTableServiceImp.getTimeTable(classeId);
+	}
+
+}

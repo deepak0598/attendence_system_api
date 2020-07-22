@@ -1,0 +1,43 @@
+package com.example.demo.model;
+
+import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Entity
+@Table(name="product")
+public class Product {
+	@Id
+	@Column(name="productId")
+	private int productId;
+	
+	@OneToMany
+	@JoinColumn(nullable = false,referencedColumnName = "categoryId")
+	private Set<Category> category;
+	
+//	@OneToMany
+//	@JoinColumn(nullable = false,referencedColumnName = "categoryId")
+//	private List<Category> category1=new ArrayList<>();
+	
+	@Column(name="ProductName",nullable = false)
+	private String ProductName;
+	
+	@Column(name="productPrice",nullable = false)
+	private int productPrice;
+	
+	@Column(name="productDetail",nullable = false)
+	private String productDetail;
+	
+	@Column(name="productImage",nullable = false)
+	private String productImage;
+}

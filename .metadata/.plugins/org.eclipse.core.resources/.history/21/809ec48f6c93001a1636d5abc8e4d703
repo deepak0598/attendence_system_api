@@ -1,0 +1,6 @@
+package com.example.model;
+
+public class Category {
+	private int categoryId;
+	private int categoryName;
+}

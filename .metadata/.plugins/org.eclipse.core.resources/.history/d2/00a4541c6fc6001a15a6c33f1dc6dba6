@@ -1,0 +1,29 @@
+package com.example.demo.modelforservices;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+public class StudentsTimeTable {
+	private String forClasse;
+	private List<String> days=new ArrayList<String>();
+	private List<String> lectures;
+	private List<String> monSubjects;
+	private List<String> monClasses;
+	private List<String> tueSubjects;
+	private List<String> tueClasses;
+	private List<String> wedSubjects;
+	private List<String> wedClasses;
+	private List<String> thuSubjects;
+	private List<String> thuClasses;
+	private List<String> friSubjects;
+	private List<String> friClasses;
+}

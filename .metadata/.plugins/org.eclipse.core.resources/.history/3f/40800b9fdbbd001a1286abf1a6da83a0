@@ -1,0 +1,10 @@
+package com.example.demo.model;
+
+public class Teacher {
+public int teacher_id;
+public int user_id;
+public String teacher_name;
+public String teacher_email;
+public int teacher_phone;
+public String teacher_address;
+}

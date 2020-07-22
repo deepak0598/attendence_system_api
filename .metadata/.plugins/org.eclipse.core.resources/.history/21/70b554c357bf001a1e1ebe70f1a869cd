@@ -1,0 +1,9 @@
+package com.example.demo.model;
+
+import javax.persistence.Entity;
+
+@Entity
+public class RoleDecider {
+	private int userId;
+	private Role roleId;
+}

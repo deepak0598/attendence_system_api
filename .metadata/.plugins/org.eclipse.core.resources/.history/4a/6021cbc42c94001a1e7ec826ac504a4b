@@ -1,0 +1,1 @@
+insert into `category` (categoryId,categoryName) values (1,'bikes'),(12,'cycles'),(3,'cars'),(4,'bus');

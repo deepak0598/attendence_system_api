@@ -1,0 +1,32 @@
+package com.example.demo.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.model.Role;
+import com.example.demo.repository.RoleRepo;
+
+@RestController
+@RequestMapping("/login")
+public class LoginController {
+	
+	@Autowired
+	RoleRepo roleRepo;
+
+	@GetMapping("/auth")
+	public List<Role> getCredentials(){
+		return roleRepo.findAll();	
+	}
+	
+	@PostMapping(value="/add")
+	public Role addCategory(@RequestBody Role role) {
+		roleRepo.save(role);
+		return role;
+	}
+}
